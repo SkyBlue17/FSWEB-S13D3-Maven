@@ -8,18 +8,20 @@ public class Person {
     double weight;
     double height;
 
-    public Person(int age, String lastName, String firstName) {
+    public Person(String firstName, String lastName, int age) {
         this.age = age;
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
     public Person(double height, double weight, int age, String gender, String lastName, String firstName) {
-        this(age, lastName, firstName);
+        this(firstName, lastName,age );
         this.height = height;
         this.weight = weight;
         this.gender = gender;
     }
+
+
     public String getFirstName(){
         return firstName;
     }
@@ -30,8 +32,18 @@ public class Person {
         return age;
     }
     public boolean isTeen(){
-        return age>13 && age<19;
+        return this.age < 19 && this.age > 13;
     }
 
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                '}';
+    }
 }
